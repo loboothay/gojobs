@@ -3,14 +3,10 @@ package router
 import "github.com/gin-gonic/gin"
 
 func Initialize() {
-	//Inicializa o router utilizando as configurações padroes do Gin
+	//Initialize router
 	router := gin.Default()
-	//Definindo uma rota
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-	//Rodando a Api e especificando a porta
+	//Initialize Routes
+	initializeRoutes(router)
+	//Run the server
 	router.Run(":8080")
 }
